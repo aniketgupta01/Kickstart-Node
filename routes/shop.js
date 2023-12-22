@@ -6,8 +6,8 @@ const rootDir = require('../util/path.js');
 
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-    res.sendFile(path.join(rootDir, 'views','shop.html'));
-  });
+const pathController = require('../controllers/openshop.js');
+
+router.get("/",pathController.getShop );
 
   module.exports = router;
